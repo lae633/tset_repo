@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane prefHeight="0.0" prefWidth="0.0" styleClass="frame" stylesheets="@common1.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.View.CollectionController">
+   <children>
+      <HBox layoutY="6.0" prefHeight="17.0" prefWidth="837.0" styleClass="title-bar" stylesheets="@common1.css">
+         <children>
+            <Label styleClass="title" stylesheets="@common1.css" text="Employee CRUD app" />
+         </children>
+      </HBox>
+      <HBox layoutX="14.0" layoutY="56.0" styleClass="search-bar">
+         <children>
+            <TextField fx:id="txtName" promptText="Name" />
+            <TextField fx:id="txtPhone" promptText="Phone" />
+            <TextField fx:id="txtEmail" promptText="Email" />
+            <TextField fx:id="txtSalary" promptText="Salary" />
+            <Button mnemonicParsing="false" onAction="#search" text="Search" />
+            <Button mnemonicParsing="false" onAction="#add" text="Add" />
+         </children>
+      </HBox>
+      <HBox layoutX="23.0" layoutY="119.0" prefHeight="263.0" prefWidth="617.0" styleClass="tbl-wrap">
+         <children>
+            <TableView fx:id="tblEmployeeList" prefHeight="253.0" prefWidth="602.0" styleClass="tbl-wrap">
+              <columns>
+                <TableColumn maxWidth="300.0" minWidth="30.0" prefWidth="30.0" text="ID">
+                <cellValueFactory>
+                		<PropertyValueFactory property="id" />
+                	</cellValueFactory> </TableColumn>
+                  <TableColumn minWidth="60.0" prefWidth="120.0" text="Name">
+                   <cellValueFactory>
+                		<PropertyValueFactory property="name" />
+                	</cellValueFactory> </TableColumn>
+                  <TableColumn minWidth="60.0" prefWidth="120.0" text="Mail">
+                   <cellValueFactory>
+                		<PropertyValueFactory property="mail" />
+                	</cellValueFactory> </TableColumn>
+                  <TableColumn maxWidth="2000.0" minWidth="60.0" prefWidth="100.0" text="Phone ">
+                   <cellValueFactory>
+                		<PropertyValueFactory property="phone" />
+                	</cellValueFactory> </TableColumn>
+                  <TableColumn fx:id="colSalary" maxWidth="1000.0" minWidth="60.0" prefWidth="75.0" text="Salary">
+                   <cellValueFactory>
+                		<PropertyValueFactory property="salary" />
+                	</cellValueFactory> </TableColumn>
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </HBox>
+      <HBox layoutX="575.0" layoutY="414.0" styleClass="total-bar">
+         <children>
+            <Label fx:id="lblTotal" text="Total : 0 item" />
+         </children>
+      </HBox>
+      <Button layoutX="674.0" layoutY="107.0" mnemonicParsing="false" onAction="#upload" text="Upload" />
+   </children>
+</AnchorPane>
